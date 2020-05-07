@@ -1,0 +1,23 @@
+<!DOCTYPE hrml>
+<html lang="jaj">
+
+<head>
+    <meta chaeset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/students.css}" />
+    <title>KBSELAB MENBER</title>
+</head>
+
+<body>
+    <header>
+        <h1>KBSELAB Seventh term students. Homepage</h1>
+    </header>
+    <ul class="images">
+    	<li th:each="students : ${stlist}">
+    		<a href="studentsDetail.html" th:href="@{students/detail/{id}(id=${students.id})}">
+    			<img th:src="@{/image/{name}.png(name = ${students.name})}">
+    		</a>
+    	</li>
+    </ul>
+</body>
+
+</html>
